@@ -1,0 +1,33 @@
+name: Customer Churn Analysis CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt  # Assuming you have a requirements.txt file with necessary dependencies
+        pip install -U scikit-learn  # Ensure scikit-learn is up-to-date
+
+    - name: Run tests
+      run: |
+        python -m pytest tests/  # Assuming you have test cases in a 'tests' directory
+
+    - name: Deploy
+      if: success()
+      run: |
+        # Add deployment steps here (e.g., push to production, deploy to cloud, etc.)

@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Customer Churn Prediction</h1>
+    <form action="/predict" method="post">
+        <!-- Add input fields corresponding to your features -->
+        <label for="feature1">Credit Score:</label>
+        <input type="number" name="feature1" required placeholder="Enter credit score">
+        <label for="feature3">Gender:</label>
+        <input type="text" name="feature3" required placeholder="Enter gender (e.g., Male/Female)">
+        <label for="feature4">Age:</label>
+        <input type="number" name="feature4" required placeholder="Enter age">
+        <label for="feature5">Tenure:</label>
+        <input type="number" name="feature5" required placeholder="Enter tenure">
+        <label for="feature6">Balance:</label>
+        <input type="number" name="feature6" required placeholder="Enter balance">
+        <label for="feature7">No Of Products:</label>
+        <input type="number" name="feature7" required placeholder="Enter number of products">
+        <label for="feature8">Has CrCard:</label>
+        <input type="number" name="feature8" required placeholder="Enter 1 if has Credit Card, 0 otherwise">
+        <label for="feature9">Is Active:</label>
+        <input type="number" name="feature9" required placeholder="Enter 1 if active, 0 otherwise">
+        <label for="feature10">Estimated Salary:</label>
+        <input type="number" name="feature10" required placeholder="Enter estimated salary">
+        <!-- Add more input fields as needed -->
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>
